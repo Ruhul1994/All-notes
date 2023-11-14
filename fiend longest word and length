@@ -1,0 +1,124 @@
+
+Longest Word
+Problem 8: Longest Word Write a function that finds the longest word in a sentence. The function should return the longest word and its length
+
+solution
+function findsLongestWord(sentense){
+
+    // separet the word
+
+    //  when want word then use the space in cottetion.
+
+    let word = sentense.split(' ')
+
+    let longestWord = '';
+
+    let MaxWordLenth = 0;
+
+  
+
+    for(let letter of word){
+
+        // clean the extra crecter in word.
+
+        const cleanWord = letter.replace(/[^\w]/g, '');
+
+        if(cleanWord.length > MaxWordLenth){
+
+           MaxWordLenth = cleanWord.length;
+
+           longestWord  = cleanWord;
+
+  
+
+        }
+
+  
+
+    }
+
+    return {
+
+        word: longestWord ,
+
+        length:MaxWordLenth
+
+    }
+
+}
+
+  
+
+const text = 'i love my country';
+
+const result = findsLongestWord(text);
+
+console.log(`the longest word is "${result.word}" and this length is ${result.length}`);
+Function: Find Longest Word
+Overview:
+The findsLongestWord function is a handy tool that helps you discover the longest word in a given sentence. It not only identifies the word but also provides its length. This function is especially useful when you want a quick glance at the most extended word in a sentence.
+
+How to Use:
+To use the function, simply provide a sentence as a string. The function will do the rest, returning an object with details about the longest word and its length.
+
+Example:
+Consider the sentence: "i love my country"
+
+const text = 'i love my country';
+const result = findsLongestWord(text);
+
+console.log(`The longest word is "${result.word}" and it has a length of ${result.length}.`);
+This would output: "The longest word is "country" and it has a length of 7."
+
+Details:
+Word Separation:
+
+The function breaks down the input sentence into individual words, treating spaces as separators.
+let words = sentence.split(' ');
+Cleaning Words:
+
+Each word undergoes a cleaning process to remove any non-alphanumeric characters, ensuring accuracy.
+const cleanWord = letter.replace(/[^\w]/g, '');
+Identifying Longest Word:
+
+The function then compares the lengths of the cleaned words, updating the longest word if a longer one is found.
+if (cleanWord.length > MaxWordLength) {
+    MaxWordLength = cleanWord.length; 
+    longestWord = cleanWord;
+}
+Return Object:
+
+Finally, an object containing the longest word and its length is returned for easy access.
+return {
+    word: longestWord,
+    length: MaxWordLength
+};
+Why Use It:
+Whether you're exploring language patterns or just curious about the most extended word in a sentence, this function provides a quick and efficient way to gather such information.
+
+Longest word fiend solution steps shortly.
+write a function.
+cutting the word by split.
+define two empty variables.
+write a for of loops
+do the word clean.
+condition checking.
+do the return
+Understand this line:
+const cleanWord = letter.replace(/[^\w]/g, '');
+In this line, letter.replace(/\w/g, '')is a regular expression (regex) that is used with thereplace` method to remove non-alphanumeric characters from the word.
+
+Here's a breakdown of the regular expression:
+
+[]: Square brackets define a character set.
+^: Inside the character set, the caret (^) at the beginning negates the set, meaning it matches any character that is NOT in the set.
+\w: \w is a shorthand character class that represents any word character (alphanumeric character plus underscore _).
+So, [^\w] matches any character that is not a word character (i.e., any character that is not alphanumeric or an underscore).
+
+/g: This flag at the end of the regular expression stands for "global," meaning it will replace all occurrences of the pattern in the string. Without this flag, only the first occurrence would be replaced.
+
+'': The second parameter of the replace method is an empty string, meaning that any non-alphanumeric characters found in the word will be replaced with nothing (i.e., removed).
+
+So, the overall effect of this line is to take a letter, remove any characters that are not alphanumeric or an underscore, and store the result in the variable cleanedWord. This is done to ensure that when comparing the lengths of words, any attached punctuation marks are not considered.
+
+14-11-2023
