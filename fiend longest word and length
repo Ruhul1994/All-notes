@@ -54,4 +54,5 @@ const text = 'i love my country';
 const result = findsLongestWord(text);
 
 console.log(`the longest word is "${result.word}" and this length is ${result.length}`);
+
 obsidian://open?vault=programar&file=javaScript%2Fproblem%20solving%2FLongest%20Word
