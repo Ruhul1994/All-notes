@@ -58,3 +58,11 @@ console.log(`the longest word is "${result.word}" and this length is ${result.le
 //link:
 
 obsidian://open?vault=programar&file=javaScript%2Fproblem%20solving%2FLongest%20Word
+
+
+// add function
+
+function added(n){
+    return n+3;
+};
+console.log(added(5));
