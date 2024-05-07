@@ -62,7 +62,7 @@ obsidian://open?vault=programar&file=javaScript%2Fproblem%20solving%2FLongest%20
 
 // add function
 
-function added(n){
-    return n+3;
-};
-console.log(added(5));
+// function added(n){
+//     return n+3;
+// };
+// console.log(added(5));
